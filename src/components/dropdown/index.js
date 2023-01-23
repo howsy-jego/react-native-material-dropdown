@@ -500,15 +500,13 @@ export default class Dropdown extends PureComponent {
     title = null == title || "string" === typeof title ? title : String(title);
 
     return (
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <TextInput
-          style={{ backgroundColor: "transparent", marginBottom: 16, flex: 1 }}
-          label=""
-          {...props}
-          value={title}
-          editable={false}
-          onChangeText={undefined}
-        />
+      <View style={{ flexDirection: "row", alignItems: "center", height: 50 }}>
+        <Text
+          style={{ flex: 1, marginLeft: 10, fontSize: 16 }}
+          numberOfLines={1}
+        >
+          {props?.value}
+        </Text>
         <Icon
           name={"chevron-down"}
           type="ionicon"
