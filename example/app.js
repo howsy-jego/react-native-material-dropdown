@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { AppRegistry, Text, View } from 'react-native';
-import { TextField } from 'react-native-material-textfield';
-import { Dropdown } from 'react-native-material-dropdown';
+import React, { Component } from "react";
+import { AppRegistry, Text, View } from "react-native";
+import { TextField } from "react-native-material-textfield";
+import { Dropdown } from "react-native-material-dropdown";
 
 export default function init() {
   class Example extends Component {
@@ -10,21 +10,21 @@ export default function init() {
 
       this.onChangeText = this.onChangeText.bind(this);
 
-      this.codeRef = this.updateRef.bind(this, 'code');
-      this.nameRef = this.updateRef.bind(this, 'name');
-      this.sampleRef = this.updateRef.bind(this, 'sample');
-      this.typographyRef = this.updateRef.bind(this, 'typography');
+      this.codeRef = this.updateRef.bind(this, "code");
+      this.nameRef = this.updateRef.bind(this, "name");
+      this.sampleRef = this.updateRef.bind(this, "sample");
+      this.typographyRef = this.updateRef.bind(this, "typography");
 
       this.state = {
-        sample: 'The quick brown fox jumps over the lazy dog',
-        typography: 'Headline',
-        name: 'Cyan',
-        code: 'A700',
+        sample: "The quick brown fox jumps over the lazy dog",
+        typography: "Headline",
+        name: "Cyan",
+        code: "A700",
       };
     }
 
     onChangeText(text) {
-      ['name', 'code', 'sample', 'typography']
+      ["name", "code", "sample", "typography"]
         .map((name) => ({ name, ref: this[name] }))
         .filter(({ ref }) => ref && ref.isFocused())
         .forEach(({ name, ref }) => {
@@ -39,11 +39,7 @@ export default function init() {
     render() {
       let { typography, name, code, sample } = this.state;
 
-      let textStyle = [
-        styles.text,
-        styles[typography],
-        styles[name + code],
-      ];
+      let textStyle = [styles.text, styles[typography], styles[name + code]];
 
       return (
         <View style={styles.screen}>
@@ -52,7 +48,7 @@ export default function init() {
               ref={this.sampleRef}
               value={sample}
               onChangeText={this.onChangeText}
-              label='Sample text'
+              label="Sample text"
               multiline={true}
             />
 
@@ -60,17 +56,17 @@ export default function init() {
               ref={this.typographyRef}
               value={typography}
               onChangeText={this.onChangeText}
-              label='Typography'
+              label="Typography"
               data={typographyData}
             />
 
-            <View style={{ flexDirection: 'row' }}>
+            <View style={{ flexDirection: "row" }}>
               <View style={{ flex: 1 }}>
                 <Dropdown
                   ref={this.nameRef}
                   value={name}
                   onChangeText={this.onChangeText}
-                  label='Color name'
+                  label="Color name"
                   data={colorNameData}
                 />
               </View>
@@ -80,7 +76,7 @@ export default function init() {
                   ref={this.codeRef}
                   value={code}
                   onChangeText={this.onChangeText}
-                  label='Color code'
+                  label="Color code"
                   data={colorCodeData}
                   propsExtractor={({ props }, index) => props}
                 />
@@ -96,7 +92,7 @@ export default function init() {
     }
   }
 
-  AppRegistry.registerComponent('example', () => Example);
+  AppRegistry.registerComponent("example", () => Example);
 }
 
 const styles = {
@@ -104,7 +100,7 @@ const styles = {
     flex: 1,
     padding: 4,
     paddingTop: 56,
-    backgroundColor: '#E8EAF6',
+    backgroundColor: "#E8EAF6",
   },
 
   container: {
@@ -114,17 +110,17 @@ const styles = {
   },
 
   text: {
-    textAlign: 'center',
+    textAlign: "center",
   },
 
   textContainer: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 2,
     padding: 16,
     elevation: 1,
     shadowRadius: 1,
     shadowOpacity: 0.3,
-    justifyContent: 'center',
+    justifyContent: "center",
     shadowOffset: {
       width: 0,
       height: 1,
@@ -134,46 +130,42 @@ const styles = {
   Display2: { fontSize: 45 },
   Display1: { fontSize: 34 },
   Headline: { fontSize: 24 },
-  Title: { fontSize: 20, fontWeight: '500' },
+  Title: { fontSize: 20, fontWeight: "500" },
   Subheading: { fontSize: 16 },
   Body: { fontSize: 14 },
   Caption: { fontSize: 12 },
 
-  Blue900: { color: '#0D47A1' },
-  Blue700: { color: '#1976D2' },
-  BlueA700: { color: '#2962FF' },
-  BlueA400: { color: '#2979FF' },
+  Blue900: { color: "#0D47A1" },
+  Blue700: { color: "#1976D2" },
+  BlueA700: { color: "#2962FF" },
+  BlueA400: { color: "#2979FF" },
 
-  Teal900: { color: '#004D40' },
-  Teal700: { color: '#00796B' },
-  TealA700: { color: '#00BFA5' },
-  TealA400: { color: '#1DE9B6' },
+  Teal900: { color: "#004D40" },
+  Teal700: { color: "#00796B" },
+  TealA700: { color: "#00BFA5" },
+  TealA400: { color: "#1DE9B6" },
 
-  Cyan900: { color: '#006064' },
-  Cyan700: { color: '#0097A7' },
-  CyanA700: { color: '#00E5FF' },
-  CyanA400: { color: '#00B8D4' },
+  Cyan900: { color: "#006064" },
+  Cyan700: { color: "#0097A7" },
+  CyanA700: { color: "#00E5FF" },
+  CyanA400: { color: "#00B8D4" },
 };
 
 const typographyData = [
-  { value: 'Display2', label: 'Display 2' },
-  { value: 'Display1', label: 'Display 1' },
-  { value: 'Headline' },
-  { value: 'Title' },
-  { value: 'Subheading' },
-  { value: 'Body' },
-  { value: 'Caption' },
+  { value: "Display2", label: "Display 2" },
+  { value: "Display1", label: "Display 1" },
+  { value: "Headline" },
+  { value: "Title" },
+  { value: "Subheading" },
+  { value: "Body" },
+  { value: "Caption" },
 ];
 
-const colorNameData = [
-  { value: 'Blue' },
-  { value: 'Teal' },
-  { value: 'Cyan' },
-];
+const colorNameData = [{ value: "Blue" }, { value: "Teal" }, { value: "Cyan" }];
 
 const colorCodeData = [
-  { value: '900', props: { disabled: true } },
-  { value: '700' },
-  { value: 'A700' },
-  { value: 'A400' },
+  { value: "900", props: { disabled: true } },
+  { value: "700" },
+  { value: "A700" },
+  { value: "A400" },
 ];
